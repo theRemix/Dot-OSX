@@ -1,0 +1,1 @@
+/home/remix/.config/fisherman/menu/menu.fish

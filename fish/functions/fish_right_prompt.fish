@@ -1,0 +1,1 @@
+/home/remix/.config/fisherman/lambda/fish_right_prompt.fish

@@ -1,0 +1,1 @@
+/home/remix/.config/fisherman/fzf/conf.d/fzf.fish
