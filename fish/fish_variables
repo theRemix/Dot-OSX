@@ -47,6 +47,6 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:555\x1eyellow
 SETUVAR fish_pager_color_prefix:cyan
 SETUVAR fish_pager_color_progress:cyan
-SETUVAR fish_user_paths:/Users/remix/\x2elocal/bin\x1e/Users/remix/\x2efzf/bin\x1e/Users/remix/\x2ewin/bin
+SETUVAR fish_user_paths:/Users/remix/\x2elocal/bin\x1e/Users/remix/\x2efzf/bin\x1e/Users/remix/\x2ewin/bin\x1e/Users/remix/\x2egopath/bin
 SETUVAR fisher_active_prompt:lambda
 SETUVAR fisher_dependency_count:lambda\x1efzf\x1emenu\x1eget_file_age\x1eawait\x1elast_job_id\x1efnm
