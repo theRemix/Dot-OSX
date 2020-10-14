@@ -1,0 +1,15 @@
+font:
+  normal:
+    family: OperatorMono Nerd Font
+    style: Medium
+
+  bold:
+    family: OperatorMono Nerd Font
+    style: Bold
+
+  italic:
+    family: OperatorMono Nerd Font
+    style: Italic
+
+  # Point size
+  size: 16.0
