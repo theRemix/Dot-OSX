@@ -34,3 +34,22 @@ after configuring git, append gitconfig-tail
 ```sh
 cat ~/.dotfiles/gitconfig-tail >> ~/.gitconfig
 ```
+
+## Dependencies
+
+after linking and configuring, install dependencies
+
+```sh
+brew install delta fzf
+mkdir ~/.config/fisherman
+fisher
+```
+
+add the Nerd Font patched version of OperatorMono
+
+## Change default shell ><>
+
+```sh
+sudo sh -c 'echo `which fish` >> /private/etc/shells'
+chsh -s $(which fish)
+```
