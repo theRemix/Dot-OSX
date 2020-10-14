@@ -1,5 +1,5 @@
-alias pbcopy="xclip -selection c"
-alias pbpaste="xclip -selection c -o"
+#alias pbcopy="xclip -selection c"
+#alias pbpaste="xclip -selection c -o"
 alias pbj='pbpaste | python -m json.tool'
 
 alias ag="ag --hidden -p ~/.agignore"

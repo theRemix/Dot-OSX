@@ -358,7 +358,8 @@ let g:multi_cursor_next_key="\<C-s>"
 """"""""""""""""""""""""""""""
 let g:airline#extensions#branch#displayed_head_limit = 10
 let g:airline_powerline_fonts = 1
-let g:airline_theme="base16_airship"
+let g:airline_theme="simple"
+" let g:airline_theme="base16_airship"
 
 " Automatically truncate sections
 let g:airline#extensions#default#section_truncate_width = {
@@ -448,7 +449,7 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 """"""""""""""""""""""""""""""
 " map <leader>gg :GitGutterToggle<CR>
 map <leader>gs :Gstatus<CR>
-set diffopt+=vertical
+" set diffopt+=vertical
 
 
 """"""""""""""""""""""""""""""

@@ -1,1 +1,0 @@
-/home/remix/.config/fisherman/thefuck/init.fish

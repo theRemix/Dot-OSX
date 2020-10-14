@@ -123,10 +123,10 @@ let g:prettier#config#parser = 'flow'
 " set background=dark
 
 " Theme, Colorscheme, & Font
-" colorscheme gotham256
+colorscheme sourcerer
 " colorscheme murphy
 " colorscheme industry
-colorscheme airship
+" colorscheme airship
 
 " Set extra options when running in GUI mode
 " if has("gui_running")
@@ -305,9 +305,9 @@ map <silent> <leader><cr> :noh<cr>
 " map <C-k> <C-W>k
 " map <C-h> <C-W>h
 " map <C-l> <C-W>l
-map <C-h> <C-W>j
-map <C-t> <C-W>k
-map <C-n> <C-W>h
+map <C-h> <C-W>h
+map <C-t> <C-W>j
+map <C-n> <C-W>k
 map <C-s> <C-W>l
 
 " let g:tmux_navigator_no_mappings = 1
@@ -323,6 +323,9 @@ map <leader>bd :Bclose<cr>
 
 " Close all the buffers
 map <leader>ba :1,1000 bd!<cr>
+
+" Last Buffer
+map <leader><leader> b#<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
