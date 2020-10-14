@@ -1,28 +1,26 @@
-# Dot-Win10
+# Dot-OSX
 
-Dotfiles for Win10 with WSL
+Dotfiles for OSX
 
 
 ## Provides Configurations For
 
-- wsltty
+- alacritty
 - fish
-- asdf
 - vim
 - tmux
 
 ## Install
 
 ```sh
-git clone git@github.com:theRemix/Dot-Win10.git ~/.win
+git clone git@github.com:theRemix/Dot-OSX.git ~/.dotfiles
 ```
 
 ## Links
 
 ```sh
-ln -s ~/.win/vim ~/.vim
-ln -s ~/.win/vimrc ~/.vimrc
-ln -s ~/.win/tmux.conf ~/.tmux.conf
-ln -s ~/.win/fish ~/.config/fish
-ln -s ~/.asdf/completions/asdf.fish ~/.win/fish/completions/asdf.fish
+ln -s ~/.dotfiles/vim ~/.vim
+ln -s ~/.dotfiles/vimrc ~/.vimrc
+ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/fish ~/.config/fish
 ```
