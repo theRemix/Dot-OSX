@@ -40,9 +40,10 @@ cat ~/.dotfiles/gitconfig-tail >> ~/.gitconfig
 after linking and configuring, install dependencies
 
 ```sh
-brew install delta fzf
+brew install git-delta fzf
 mkdir ~/.config/fisherman
 fisher
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 add the Nerd Font patched version of OperatorMono
@@ -52,4 +53,20 @@ add the Nerd Font patched version of OperatorMono
 ```sh
 sudo sh -c 'echo `which fish` >> /private/etc/shells'
 chsh -s $(which fish)
+```
+
+## Install tmux plugins
+
+```sh
+tmux source ~/.tmux.conf
+```
+
+`prefix` + `I`
+
+## Install vim plugins
+
+in vim
+
+```sh
+:PlugInstall
 ```
