@@ -123,10 +123,30 @@ let g:prettier#config#parser = 'flow'
 " set background=dark
 
 " Theme, Colorscheme, & Font
-colorscheme sourcerer
+" colorscheme sourcerer
 " colorscheme murphy
 " colorscheme industry
 " colorscheme airship
+
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+" let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+
+" overrides
+hi Visual  guifg=NONE guibg=#607080 gui=none
+hi Comment  guifg=#9CA7B3 guibg=NONE gui=none
+
+let g:airline_theme='ayu_mirage'
+
+" IndentLine {{
+" let g:indentLine_char = '│'
+" let g:indentLine_first_char = '┃'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊'] " │	┃ ╎	╏ ┆	┇ ┊	┋
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+" }}
 
 " Set extra options when running in GUI mode
 " if has("gui_running")
@@ -136,7 +156,7 @@ colorscheme sourcerer
 "   set guitablabel=%M\ %t
 " endif
 
-" set t_Co=256
+set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -325,7 +345,11 @@ map <leader>bd :Bclose<cr>
 map <leader>ba :1,1000 bd!<cr>
 
 " Last Buffer
-map <leader><leader> b#<cr>
+" nnoremap <C-6> :b#<cr>
+" nnoremap <leader><leader> :b#<cr> # WHY THE FUCK DOES THIS NOT WORK, only works after sourcing vimrc again
+" nnoremap <S-Tab> :b#<cr>
+nnoremap <Tab> :bnext<cr>
+nnoremap <S-Tab> :bprevious<cr>
 
 " Useful mappings for managing tabs
 map <leader>tn :tabnew<cr>
@@ -376,10 +400,12 @@ vnoremap <leader>agg :call VisualSelection('gv', '')<CR>
 
 " Open Ack and put the cursor in the right position
 " map <leader>ac :Ack
-map <leader>ag :Ag
+" map <leader>ag :Ag
 
 " Search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+" idk how to make this work or what it does! \" \"vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
+"  xnoremap <silent> <leader>r :<C-U>%s/<C-R><C-R>=Escaped(VisualSelection('f', '')) . '/'<cr>
+vnoremap <leader>r "hy:%s/<C-r>h//gc<left><left><left>
 
 " Go to next/prev search results
 " map <leader>n :cn<cr>
@@ -391,12 +417,12 @@ vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Toggle and untoggle spell checking
-map <leader>sc :setlocal spell!<cr>
+map <leader>SP :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
+map <leader>SN ]s
+map <leader>SP [s
+map <leader>SA zg
 map <leader>s? z=
 
 
@@ -555,7 +581,6 @@ function! VisualSelection(direction, extra_filter) range
   let @" = l:saved_reg
 endfunction
 
-
 " Returns true if paste mode is enabled
 function! HasPaste()
   if &paste
@@ -618,17 +643,17 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('html', 202, 'none', '#FC4709', '#FC4709')
-call NERDTreeHighlightFile('hbs', 202, 'none', '#FC4709', '#FC4709')
-call NERDTreeHighlightFile('jade', 149, 'none', '#A0D24D', '#A0D24D')
-call NERDTreeHighlightFile('json', 223, 'none', '#FECEA0', '#FECEA0')
-call NERDTreeHighlightFile('scss', 44, 'none', '#1AD0CE', '#1AD0CE')
-call NERDTreeHighlightFile('css', 44, 'none', '#1AD0CE', '#1AD0CE')
-call NERDTreeHighlightFile('js', 226, 'none', '#FFFF0D', '#FFFF0D')
-call NERDTreeHighlightFile('rb', 197, 'none', '#E53378', '#E53378')
-call NERDTreeHighlightFile('md', 208, 'none', '#FD720A', '#FD720A')
-call NERDTreeHighlightFile('php', 140, 'none', '#9E6FCD', '#9E6FCD')
-call NERDTreeHighlightFile('svg', 178, 'none', '#CDA109', '#CDA109')
-call NERDTreeHighlightFile('gif', 36, 'none', '#15A274', '#15A274')
-call NERDTreeHighlightFile('jpg', 36, 'none', '#15A274', '#15A274')
-call NERDTreeHighlightFile('png', 36, 'none', '#15A274', '#15A274')
+" call NERDTreeHighlightFile('html', 202, 'none', '#FC4709', '#FC4709')
+" call NERDTreeHighlightFile('hbs', 202, 'none', '#FC4709', '#FC4709')
+" call NERDTreeHighlightFile('jade', 149, 'none', '#A0D24D', '#A0D24D')
+" call NERDTreeHighlightFile('json', 223, 'none', '#FECEA0', '#FECEA0')
+" call NERDTreeHighlightFile('scss', 44, 'none', '#1AD0CE', '#1AD0CE')
+" call NERDTreeHighlightFile('css', 44, 'none', '#1AD0CE', '#1AD0CE')
+" call NERDTreeHighlightFile('js', 226, 'none', '#FFFF0D', '#FFFF0D')
+" call NERDTreeHighlightFile('rb', 197, 'none', '#E53378', '#E53378')
+" call NERDTreeHighlightFile('md', 208, 'none', '#FD720A', '#FD720A')
+" call NERDTreeHighlightFile('php', 140, 'none', '#9E6FCD', '#9E6FCD')
+" call NERDTreeHighlightFile('svg', 178, 'none', '#CDA109', '#CDA109')
+" call NERDTreeHighlightFile('gif', 36, 'none', '#15A274', '#15A274')
+" call NERDTreeHighlightFile('jpg', 36, 'none', '#15A274', '#15A274')
+" call NERDTreeHighlightFile('png', 36, 'none', '#15A274', '#15A274')

@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
 " 	\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 " Fuzzy file, buffer, mru, tag, etc finder
-" Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Code completion
 Plug 'Shougo/deoplete.nvim'
@@ -76,6 +76,9 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Cache file automatically
 " Plug 'MarcWeber/vim-addon-mw-utils'
 
+" Ayu theme
+Plug 'ayu-theme/ayu-vim'
+
 " Lean & mean status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -105,7 +108,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'tpope/vim-surround'
 
 " Display indention levels with vertical lines
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 
 " Tmux statusline generator with support for airline
 Plug 'edkolev/tmuxline.vim'
@@ -128,7 +131,7 @@ Plug 'easymotion/vim-easymotion'
 
 " Shows a git diff in the gutter
 " DISABLED FOR NOW CAUSE ITS VERY SLOW!
-" Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " Instant Markdown previews
 " Requires npm -g install instant-markdown-d
@@ -200,6 +203,29 @@ Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 " Nginx syntax
 Plug 'vim-scripts/nginx.vim'
 
+" Coffeescript syntax
+Plug 'kchmck/vim-coffee-script'
+
+" Svelte syntax
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
+let g:svelte_indent_script = 0
+let g:svelte_indent_style = 0
+
+" Toml syntax
+Plug 'cespare/vim-toml'
+
+" Haxe Plugin
+Plug 'jdonaldson/vaxe'
+
+" Starlark lang
+Plug 'cappyzawa/starlark.vim'
+
+" Terraform lang
+Plug 'hashivim/vim-terraform'
+
+" Godot
+Plug 'habamax/vim-godot'
+
 call plug#end()
 
 
@@ -209,12 +235,32 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
+" vim-godot plugin
+""""""""""""""""""""""""""""""
+
+" to use folding provided by plugin
+func! GodotSettings() abort
+    let g:godot_executable = '/Applications/Godot.app'
+    " setlocal foldmethod=expr
+    setlocal tabstop=4
+    nnoremap <buffer> <F4> :GodotRunLast<CR>
+    nnoremap <buffer> <F5> :GodotRun<CR>
+    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
+    nnoremap <buffer> <F7> :GodotRunFZF<CR>
+endfunc
+augroup godot | au!
+    au FileType gdscript call GodotSettings()
+augroup end
+
+""""""""""""""""""""""""""""""
 " vim-go plugin
 """"""""""""""""""""""""""""""
-autocmd FileType go nmap <leader>t  <Plug>(go-test)
-autocmd FileType go nmap <leader>tf <Plug>(go-test-func)
+" autocmd FileType go nmap <leader>t  <Plug>(go-test)
+" autocmd FileType go nmap <leader>tf <Plug>(go-test-func)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 let g:go_test_timeout = '30s'
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 """"""""""""""""""""""""""""""
 " bufExplorer plugin
@@ -289,24 +335,25 @@ map <leader>o :BufExplorer<cr>
 """"""""""""""""""""""""""""""
 " CTRL-P
 """"""""""""""""""""""""""""""
-" let g:ctrlp_working_path_mode = 'rw'
-" let g:ctrlp_show_hidden = 1
-" let g:ctrlp_max_height = 20
+let g:ctrlp_working_path_mode = 'rw'
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_max_height = 20
 
 " let g:ctrlp_map = '<C-f>'
-" map <C-b> :CtrlPBuffer<CR>
+" map <C-p> :CtrlP<CR>
+map <C-b> :CtrlPBuffer<CR>
 
-" let g:ctrlp_custom_ignore = 'public\|node_modules\|bower_components\|^\.DS_Store\|^\.git\|^\.coffee'
+let g:ctrlp_custom_ignore = 'public\|node_modules\|bower_components\|^\.DS_Store\|^\.git\|^\.coffee'
 
-" let g:ctrlp_custom_ignore = {
-"   \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache|node_modules|bower_components)$',
-"   \ 'file': '\v\.(png|jpg|jpeg|gif|DS_Store|pyc)$',
-"   \ 'link': '',
-"   \ }
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|sass-cache|node_modules|bower_components)$',
+  \ 'file': '\v\.(png|jpg|jpeg|gif|DS_Store|pyc)$',
+  \ 'link': '',
+  \ }
 
 
 " only show files that are not ignored by git
-" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
 """"""""""""""""""""""""""""""
@@ -326,8 +373,8 @@ nnoremap <silent> <leader>f :Buffers<CR>
 nnoremap <silent> <leader>` :Marks<CR>
 
 " [Tags] Command to generate tags file
-" let g:fzf_tags_command = 'ctags -R --exclude=.git --exclude=node_modules --exclude=test'
-nnoremap <silent> <leader>t :Tags<CR>
+let g:fzf_tags_command = 'ctags -R --exclude=.git --exclude=node_modules --exclude=test'
+" nnoremap <silent> <leader>t :Tags<CR>
 
 """"""""""""""""""""""""""""""
 " NERDTree
@@ -429,7 +476,7 @@ imap <expr><TAB>
 " vim-easymotion
 """"""""""""""""""""""""""""""
 map s <Plug>(easymotion-s)
-map <leader>ss <Plug>(easymotion-s2)
+" map <leader>ss <Plug>(easymotion-s2)
 
 " match lower & upper case
 let g:EasyMotion_smartcase = 1
@@ -449,8 +496,15 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 """"""""""""""""""""""""""""""
 " map <leader>gg :GitGutterToggle<CR>
 map <leader>gs :Gstatus<CR>
+map <leader>GS :vertical Gstatus<CR>
+map <leader>gl :Glog<CR>
+map <leader>ga :Gwrite<CR>
+map <leader>gc :Gcommit<CR>
+map <leader>gps :Gpush<CR>
+map <leader>gd :Gdiff<CR>
+map <leader>GD :vertical Gdiff<CR>
 " set diffopt+=vertical
-
+set diffopt=vertical
 
 """"""""""""""""""""""""""""""
 " vim-instant-markdown
@@ -490,11 +544,15 @@ nnoremap <silent> <leader>z :ZoomWin<cr>
 " Prompt CtrlSF using ALT+f
 " nmap ƒ <Plug>CtrlSFPrompt
 " vmap ƒ <Plug>CtrlSFVwordPath
-nmap <silent> <leader>T <Plug>CtrlSFPrompt
+" nmap <silent> <leader>T <Plug>CtrlSFPrompt
+nmap <leader>T <Plug>CtrlSFPrompt
 
 " Toggle CtrlSF result display
 " map † :CtrlSFToggle<CR>
-map <silent> <leader>t :CtrlSFToggle<CR>
+" map <silent> <leader>t :CtrlSFToggle<CR>
+map <leader>t :CtrlSFToggle<CR>
+
+map ƒ <Plug>CtrlSFCwordPath<CR>
 
 let g:ctrlsf_indent = 2
 let g:ctrlsf_auto_focus = {
