@@ -4,9 +4,6 @@
 
 call plug#begin('~/.vim/plugged')
 
-" Interactive command execution
-" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-
 " post install (yarn install | npm install) then load plugin only for editing supported files
 " Plug 'prettier/vim-prettier', {
 " 	\ 'do': 'yarn install',
@@ -16,37 +13,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Code completion
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-" For func argument completion
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-
-" Deoplete JS
-Plug 'wokalski/autocomplete-flow'
-
-" Deoplete Elixir
-Plug 'slashmili/alchemist.vim'
-
-" Deoplete Go
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-
-" Deoplete Ruby
-Plug 'fishbullet/deoplete-ruby'
-
-" Tab completing
-" Plug 'ajh17/VimCompletesMe'
-" Plug 'maxboisvert/vim-simple-complete'
-
-" Emacs's kill-ring for vim
-" Plug 'maxbrunsfeld/vim-yankstack'
-
-" Emmet for vim
-" Plug 'mattn/emmet-vim'
-
-" Vim frontend for the Perl module Ack
-" Plug 'mileszs/ack.vim'
 
 " Silver searcher
 Plug 'rking/ag.vim'
@@ -54,9 +20,6 @@ Plug 'rking/ag.vim'
 " Command-line fuzzy finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
-" Edit every file in a quickfix list at the same time using ag
-" Plug 'Olical/vim-enmasse'
 
 " BufExplorer quickly and easily switch between buffer
 Plug 'jlanzarotta/bufexplorer'
@@ -67,14 +30,11 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 " Snippet files for various programming languages
 " Plug 'honza/vim-snippets'
 
-" Syntax checking
-" Plug 'scrooloose/syntastic'
-
 " Linter
 " Plug 'w0rp/ale'
 
-" Cache file automatically
-" Plug 'MarcWeber/vim-addon-mw-utils'
+" Tmux statusline generator with support for airline
+Plug 'edkolev/tmuxline.vim'
 
 " Ayu theme
 Plug 'ayu-theme/ayu-vim'
@@ -92,17 +52,8 @@ Plug 'terryma/vim-expand-region'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
 
-" Markdown syntax highlighting
-Plug 'plasticboy/vim-markdown'
-
 " Enable repeating supported plugin maps
 Plug 'tpope/vim-repeat'
-
-" Ultimate snippet solution
-" Plug 'SirVer/ultisnips'
-
-" Elixir
-Plug 'elixir-lang/vim-elixir'
 
 " Quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
@@ -110,17 +61,8 @@ Plug 'tpope/vim-surround'
 " Display indention levels with vertical lines
 Plug 'Yggdroot/indentLine'
 
-" Tmux statusline generator with support for airline
-Plug 'edkolev/tmuxline.vim'
-
-" Typescript syntax highlighting
-" Plug 'leafgarland/typescript-vim'
-
 " Undo history visualizer
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-
-" Vim Workspace Controller
-" Plug 'szw/vim-ctrlspace'
 "
 " DISABLED FOR NOW CAUSE ITS SLOW AND I DONT USE IT ENOUGH
 " Plug 'vim-ctrlspace/vim-ctrlspace'
@@ -138,31 +80,49 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'suan/vim-instant-markdown'
 
 " Sublime Text style multiple selections
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 " Paste in Vim with indentation adjusted to destination context
-" Plug 'sickill/vim-pasta'
-
-" Toggle, display and navigate marks
-" Plug 'kshenoy/vim-signature'
+Plug 'sickill/vim-pasta'
 
 " Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
 
 " Add filetype glyphs (icons)
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " Zoom in/out of windows
 Plug 'regedarek/ZoomWin'
-
-" Gotham colorscheme
-" Plug 'whatyouhide/vim-gotham'
 
 " Ctrl SF
 Plug 'dyng/ctrlsf.vim'
 
 " Auto Pairs
 Plug 'jiangmiao/auto-pairs'
+
+" Vim TaskWarrior
+" Plug 'blindFS/vim-taskwarrior'
+
+" Vim HardTime
+" Plug 'takac/vim-hardtime'
+
+" Markdown syntax highlighting
+Plug 'plasticboy/vim-markdown'
+
+" Vim MDX JS
+" Plug 'jxnblk/vim-mdx-js'
+
+" Vim Erlang
+" Plug 'vim-erlang/vim-erlang-runtime'
+
+" Elixir
+" Plug 'elixir-lang/vim-elixir'
+
+" Vim graphql
+" Plug 'jparise/vim-graphql'
+
+" Systemd syntax
+" Plug 'Matt-Deacalion/vim-systemd-syntax'
 
 " Vim Go
 Plug 'fatih/vim-go'
@@ -172,24 +132,6 @@ Plug 'vim-ruby/vim-ruby'
 
 " Vim Typescript
 Plug 'leafgarland/typescript-vim'
-
-" Vim MDX JS
-Plug 'jxnblk/vim-mdx-js'
-
-" Vim Erlang
-" Plug 'vim-erlang/vim-erlang-runtime'
-
-" Vim TaskWarrior
-" Plug 'blindFS/vim-taskwarrior'
-
-" Vim HardTim
-" Plug 'takac/vim-hardtime'
-
-" Vim graphql
-" Plug 'jparise/vim-graphql'
-
-" Systemd syntax
-" Plug 'Matt-Deacalion/vim-systemd-syntax'
 
 " HCL Format
 Plug 'fatih/vim-hclfmt'
@@ -218,7 +160,7 @@ Plug 'cespare/vim-toml'
 Plug 'jdonaldson/vaxe'
 
 " Starlark lang
-Plug 'cappyzawa/starlark.vim'
+" Plug 'cappyzawa/starlark.vim'
 
 " Terraform lang
 Plug 'hashivim/vim-terraform'
@@ -279,60 +221,6 @@ map <leader>o :BufExplorer<cr>
 
 
 """"""""""""""""""""""""""""""
-" Unite.vim
-""""""""""""""""""""""""""""""
-
-" Use the fuzzy matcher for everything
-" call unite#filters#matcher_default#use(['matcher_fuzzy'])
-" call unite#filters#converter_default#use(['converter_relative_word'])
-" call unite#filters#sorter_default#use(['sorter_rank'])
-" call unite#custom#source('file_mru,file_rec,file_rec/async', 'converters', 'converter_relative_word')
-
-" call unite#custom#profile('default', 'context', {
-"   \ 'cursor_line_highlight' : 'CursorLine',
-"   \ 'start_insert': 1,
-"   \ 'winheight': 10,
-"   \ 'direction': 'botright',
-"   \ })
-
-" Set up some custom ignores
-" call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
-"   \ 'ignore_pattern', join([
-"   \ '\.git/',
-"   \ 'tmp/',
-"   \ '.sass-cache',
-"   \ 'node_modules/',
-"   \ 'bower_components/',
-"   \ 'dist/',
-"   \ '.pyc',
-"   \ ], '\|'))
-
-" let g:unite_data_directory='~/.vim/.cache/unite'
-" let g:unite_source_history_yank_enable=1
-" let g:unite_source_rec_max_cache_files=5000
-" let g:unite_source_file_mru_limit=200
-" let g:unite_source_rec_async_command='ag --nocolor --nogroup --hidden -g ""'
-" let g:unite_source_grep_command = 'ack'
-" let g:unite_source_grep_default_opts = '-s -H --nocolor --nogroup --column'
-" let g:unite_source_grep_recursive_opt = ''
-" let g:unite_prompt='❯ '
-
-" nnoremap <C-f> :<C-u>Unite -buffer-name=files file_mru file_rec/async:!<CR>
-" nnoremap <leader>f :<C-u>Unite -no-split -no-resize -direction=topleft -buffer-name=mru file_mru<CR>
-" map <leader>y :<C-u>Unite -no-start-insert history/yank<CR>
-" nnoremap <leader>/ :<C-u>Unite grep:.<CR>
-
-" Custom mappings for the unite buffer
-" autocmd FileType unite call s:unite_keymaps()
-
-" function! s:unite_keymaps()
-"   " Enable navigation with control-j and control-k in insert mode
-"   imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-"   imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-" endfunction
-
-
-""""""""""""""""""""""""""""""
 " CTRL-P
 """"""""""""""""""""""""""""""
 let g:ctrlp_working_path_mode = 'rw'
@@ -387,14 +275,6 @@ let g:NERDTreeDirArrowCollapsible = '✧'
 map <C-e> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""
-" Ultisnips
-""""""""""""""""""""""""""""""
-" let g:UltiSnipsExpandTrigger="<C-Space>"
-" let g:UltiSnipsExpandTrigger="<Tab>"
-" let g:UltiSnipsJumpForwardTrigger="<C-Tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
-""""""""""""""""""""""""""""""
 " vim-multiple-cursors
 """"""""""""""""""""""""""""""
 let g:multi_cursor_next_key="\<C-s>"
@@ -417,60 +297,6 @@ let g:airline#extensions#default#section_truncate_width = {
   \ 'warning': 50,
   \ }
 
-""""""""""""""""""""""""""""""
-" yankstack
-""""""""""""""""""""""""""""""
-
-" Remove default key mappings
-" let g:yankstack_map_keys = 0
-
-" nmap <leader>p <Plug>yankstack_substitute_older_paste
-" nmap <leader>P <Plug>yankstack_substitute_newer_paste
-
-
-""""""""""""""""""""""""""""""
-" deoplete
-""""""""""""""""""""""""""""""
-" let g:python_host_prog = expand('/usr/bin/python2')
-" let g:python3_host_prog = substitute(g:python_host_prog, '2', '3', '')
-let g:python_host_prog = expand('/home/remix/.asdf/shims/python')
-let g:python3_host_prog = expand('/home/remix/.asdf/shims/python3')
-let g:deoplete#num_processes = 1
-let g:deoplete#enable_at_startup = 0 " to do this manually, :call deoplete#enable()
-
-" call deoplete#custom#option({
-" \ 'auto_complete_delay': 150,
-" \ 'smart_case': v:true,
-" \ 'yarp': v:true,
-" \ })
-
-" inoremap <expr><C-n> pumvisible() ? "\<C-n>" :
-"         \ <SID>check_back_space() ? "\<TAB>" :
-"         \ deoplete#mappings#manual_complete()
-"         function! s:check_back_space() abort "{{{
-"       let col = col('.') - 1
-"       return !col || getline('.')[col - 1]  =~ '\s'
-"         endfunction"}}}
-
-inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<C-k>"
-
-""""""""""""""""""""""""""""""
-" neosnippet
-""""""""""""""""""""""""""""""
-
-let g:neosnippet#enable_completed_snippet = 1
-
-" SuperTab like snippets behavior.
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-"
-imap <expr><TAB>
- \ pumvisible() ? "\<C-n>" :
- \ neosnippet#expandable_or_jumpable() ?
- \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-" \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 """"""""""""""""""""""""""""""
 " vim-easymotion
@@ -565,14 +391,14 @@ let g:ctrlsf_extra_backend_args = {
 """"""""""""""""""""""""""""""
 " HardTime
 """"""""""""""""""""""""""""""
-let g:hardtime_default_on = 0
-let g:list_of_normal_keys = ["h", "j", "k", "l", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-let g:list_of_visual_keys = ["h", "j", "k", "l", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
-" <UP> <DOWN> for autocomplete
-let g:list_of_insert_keys = ["<LEFT>", "<RIGHT>"]
-let g:list_of_disabled_keys = []
-let g:hardtime_showmsg = 1
-" let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
-let g:hardtime_ignore_quickfix = 1
-let g:hardtime_allow_different_key = 1
+" let g:hardtime_default_on = 0
+" let g:list_of_normal_keys = ["h", "j", "k", "l", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+" let g:list_of_visual_keys = ["h", "j", "k", "l", "<UP>", "<DOWN>", "<LEFT>", "<RIGHT>"]
+" " <UP> <DOWN> for autocomplete
+" let g:list_of_insert_keys = ["<LEFT>", "<RIGHT>"]
+" let g:list_of_disabled_keys = []
+" let g:hardtime_showmsg = 1
+" " let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
+" let g:hardtime_ignore_quickfix = 1
+" let g:hardtime_allow_different_key = 1
 
