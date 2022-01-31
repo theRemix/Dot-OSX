@@ -8,7 +8,7 @@ Dotfiles for OSX
 - git
 - alacritty
 - fish
-- vim
+- nvim
 - tmux
 
 ## Install
@@ -20,11 +20,16 @@ git clone git@github.com:theRemix/Dot-OSX.git ~/.dotfiles
 ## Links
 
 ```sh
-ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.dotfiles/vimrc ~/.vimrc
+ln -s ~/.dotfiles/nvim  ~/.config/nvim
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/fish ~/.config/fish
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
+```
+### nvim plug
+
+install Plug to
+```
+~/.local/share/nvim/site/autoload/plug.vim
 ```
 
 ## Git
