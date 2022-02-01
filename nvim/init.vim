@@ -107,6 +107,17 @@ Plug 'kyazdani42/nvim-web-devicons'
 " sidebar
 Plug 'sidebar-nvim/sidebar.nvim'
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+" Autocompletion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'onsails/lspkind-nvim'
+" Treesitter, improved syntax highlighting
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+
 call plug#end()
 
 " onedark colorscheme
@@ -129,6 +140,11 @@ nnoremap <C-b> :Telescope buffers<cr>
 " sidebar
 nnoremap <C-e> :SidebarNvimFocus<Cr>
 
+
 " lua requires
+"
 lua require('remix/telescope')
 lua require('remix/gitsigns')
+lua require('remix/sidebar')
+lua require('remix/lsp')
+lua require('remix/treesitter')

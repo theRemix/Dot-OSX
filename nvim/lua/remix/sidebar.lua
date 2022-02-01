@@ -1,6 +1,9 @@
-require("sidebar-nvim").setup({
+sidebar = require("sidebar-nvim")
+sidebar.setup({
     disable_default_keybindings = 1,
-    bindings = { ["q"] = function() require("sidebar-nvim").close() end },
+    bindings = { 
+        ["q"] = function() sidebar.close() end
+    },
     open = false,
     side = "left",
     initial_width = 35,
@@ -9,14 +12,19 @@ require("sidebar-nvim").setup({
     sections = { "files", "symbols", "buffers", "git", "diagnostics", "todos" },
     section_separator = {"", "-----", ""},
     files = {
-        icon = "",
+        icon = "♔",
         show_hidden = false,
         ignored_paths = {"%.git$"}
     },
     symbols = {
         icon = "ƒ",
     },
-    todos = { ignored_paths = { "~" } },
+    todos = { 
+        icon = "",
+        ignored_paths = {'~'}, -- ignore certain paths, this will prevent huge folders like $HOME to hog Neovim with TODO searching
+        initially_closed = false, -- whether the groups should be initially closed on start. You can manually open/close groups later.
+        ignored_paths = { "~" } 
+    },
     buffers = {
         icon = "",
         ignored_buffers = {} -- ignore buffers by regex
