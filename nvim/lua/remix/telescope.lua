@@ -9,7 +9,11 @@ telescope.setup {
             case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                                              -- the default case_mode is "smart_case"
         }
-    }
+    },
+    defaults = { file_ignore_patterns = {
+      "node_modules", 
+      ".png", ".import", ".tres", ".wav", ".otf", ".ttf"
+    } },
 }
 
 -- To get fzf loaded and working with telescope,
