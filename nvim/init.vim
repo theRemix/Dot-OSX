@@ -341,16 +341,28 @@ Plug 'easymotion/vim-easymotion'
 " Markdown, folding and syntax highlighting
 Plug 'preservim/vim-markdown'
 
+" surround
+Plug 'tpope/vim-surround'
+
+" autopairs
+Plug 'windwp/nvim-autopairs'
+
+" comments
+Plug 'tpope/vim-commentary'
+
 " LSP
 Plug 'neovim/nvim-lspconfig'
 " Autocompletion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'onsails/lspkind-nvim'
 " Treesitter, improved syntax highlighting
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+
+" Godot lang
+Plug 'habamax/vim-godot'
 
 call plug#end()
 
@@ -403,3 +415,4 @@ lua require('remix/gitsigns')
 lua require('remix/sidebar')
 lua require('remix/lsp')
 lua require('remix/treesitter')
+lua require('remix/autopairs')
