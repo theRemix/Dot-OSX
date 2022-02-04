@@ -37,7 +37,7 @@ end
 
 -- nvim-cmp
 local cmp = require('cmp')
--- local lspkind = require('lspkind')
+local lspkind = require('lspkind')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 -- better autocompletion experience
@@ -54,8 +54,6 @@ cmp.setup {
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
               cmp.select_next_item()
-            elseif vsnip.expand_or_jumpable() then
-              vsnip.expand_or_jump()
             else
               fallback()
             end
@@ -63,16 +61,11 @@ cmp.setup {
         ['<S-Tab>'] = function(fallback)
             if cmp.visible() then
               cmp.select_prev_item()
-            elseif vsnip.jumpable(-1) then
-              vsnip.jump(-1)
             else
               fallback()
             end
         end,
-        ['<CR>'] = cmp.mapping.confirm {
-            -- behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-        },
+        ['<CR>'] = cmp.mapping.confirm { select = true },
     },
     snippet = {
         expand = function(args)
@@ -104,4 +97,4 @@ cmp.setup.cmdline(':', {
 })
 
 -- If you want insert `(` after select function or method item
--- cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
