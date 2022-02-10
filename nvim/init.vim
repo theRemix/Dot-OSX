@@ -411,6 +411,7 @@ map <leader>l <Plug>(easymotion-lineforward)
 map <leader>j <Plug>(easymotion-j)
 map <leader>k <Plug>(easymotion-k)
 map <leader>h <Plug>(easymotion-linebackward)
+map <leader>b <Plug>(easymotion-linebackward)
 
 " vsnip
 " Jump forward or backward
