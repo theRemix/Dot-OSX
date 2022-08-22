@@ -9,11 +9,6 @@ set termguicolors
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-" number of spaces in a <Tab>
-set tabstop=4
-set softtabstop=4
-set expandtab
-
 " enable autoindents
 set smartindent
 
@@ -73,6 +68,10 @@ set wildignore=*.o,*~,*.pyc,.git\*,.hg\*,.svn\*,*/.DS_Store
 
 " Clipboard
 set clipboard=unnamed
+
+" Disable markdown autofold
+set nofoldenable
+set foldmethod=expr
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => MAPPINGS
@@ -161,6 +160,12 @@ set smarttab
 set shiftwidth=2
 " Visible width of tabs
 set tabstop=2
+
+" number of spaces in a <Tab>
+" set tabstop=4
+" set softtabstop=4
+" set expandtab
+
 
 " Linebreak on 500 characters
 " set lbr
@@ -333,7 +338,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " sidebar
-Plug 'sidebar-nvim/sidebar.nvim'
+" Plug 'sidebar-nvim/sidebar.nvim'
 
 " easymotion
 Plug 'easymotion/vim-easymotion'
@@ -367,6 +372,9 @@ Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 " Godot lang
 Plug 'habamax/vim-godot'
 
+" Terraform syntax
+Plug 'hashivim/vim-terraform'
+
 call plug#end()
 
 " onedark colorscheme
@@ -380,6 +388,7 @@ set signcolumn=yes
 
 " Telescope mappings
 nnoremap <C-p> :Telescope find_files<Cr>
+nnoremap <C-f> :Telescope find_files<Cr>
 nnoremap <C-g> :Telescope live_grep<cr>
 nnoremap <leader>t :Telescope grep_string<cr>
 nnoremap <C-b> :Telescope buffers<cr>
@@ -389,7 +398,7 @@ nnoremap <leader>o :Telescope buffers<cr>
 "nnoremap <leader>t :Telescope<cr>
 
 " sidebar
-nnoremap <C-e> :SidebarNvimFocus<Cr>
+" nnoremap <C-e> :SidebarNvimFocus<Cr>
 
 " Git Mappings
 nnoremap <leader>G :Git<cr>
@@ -420,10 +429,25 @@ smap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab
 imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'
 
+" Godot
+func! GodotSettings() abort
+    let g:godot_executable = '/Applications/Godot.app'
+    " setlocal foldmethod=expr
+    setlocal tabstop=4
+    setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
+    nnoremap <buffer> <F4> :GodotRunLast<CR>
+    nnoremap <buffer> <F5> :GodotRun<CR>
+    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
+    nnoremap <buffer> <F7> :GodotRunFZF<CR>
+endfunc
+augroup godot | au!
+    au FileType gdscript call GodotSettings()
+augroup end
+
 " lua requires
 lua require('remix/telescope')
 lua require('remix/gitsigns')
-lua require('remix/sidebar')
+" lua require('remix/sidebar')
 lua require('remix/lsp')
 lua require('remix/treesitter')
 lua require('remix/autopairs')

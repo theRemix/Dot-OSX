@@ -1,6 +1,6 @@
 -- lspconfig
 local nvim_lsp = require('lspconfig')
-local servers = { 'bashls', 'dockerls', 'gdscript', 'gopls', 'tsserver'}
+local servers = { 'bashls', 'dockerls', 'gdscript', 'gopls', 'tsserver', 'terraformls'}
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -34,6 +34,12 @@ for _, lsp in ipairs(servers) do
 		on_attach = on_attach,
 	}
 end
+
+nvim_lsp.terraformls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  cmd = {'terraform-ls', 'serve'},
+} 
 
 -- nvim-cmp
 local cmp = require('cmp')

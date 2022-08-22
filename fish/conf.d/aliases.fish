@@ -47,8 +47,12 @@ alias gm='git merge'
 alias gll='git log --graph --decorate --all --stat --color'
 alias gdt='git difftool'
 
+alias gpsu='git push -u origin (git branch --show-current)'
+
 alias icat="kitty +kitten icat"
 
 alias m="./main.sh"
 
 alias nvm="bass source ~/.nvm/nvm.sh --no-use ';' nvm"
+
+alias aus="env TZ=:Australia/Brisbane date"

@@ -148,14 +148,6 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
 " }}
 
-" Set extra options when running in GUI mode
-" if has("gui_running")
-"   set guioptions-=T
-"   set guioptions-=e
-"   set t_Co=256
-"   set guitablabel=%M\ %t
-" endif
-
 set t_Co=256
 
 " Set utf8 as standard encoding and en_US as the standard language
@@ -184,7 +176,7 @@ else
 endif
 
 " Disable scratch preview for autocomplete
-set completeopt-=preview
+" set completeopt-=preview
 
 " Always show current position
 " set ruler
@@ -266,6 +258,7 @@ set noswapfile
 
 " Turn on presistent undo
 " means that you can undo even when you close a buffer/Vim
+" make sure to mkdir -p ~/.vim/temp_dirs/undodir
 try
   set undodir=~/.vim/temp_dirs/undodir
   set undofile
@@ -314,8 +307,9 @@ vnoremap <silent> # :call VisualSelection('b', '')<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Treat long lines as break lines (useful when moving around in them)
-map j gj
-map k gk
+" breaks 5 j or 5 k though
+" map j gj
+" map k gk
 
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
@@ -391,7 +385,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 set showtabline=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-" => ACK FOR SEARCHING
+" => AG FOR SEARCHING
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Ack after the selected text
@@ -420,10 +414,10 @@ vnoremap <leader>r "hy:%s/<C-r>h//gc<left><left><left>
 map <leader>SP :setlocal spell!<cr>
 
 " Shortcuts using <leader>
-map <leader>SN ]s
-map <leader>SP [s
-map <leader>SA zg
-map <leader>s? z=
+" map <leader>SN ]s
+" map <leader>SP [s
+" map <leader>SA zg
+" map <leader>s? z=
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

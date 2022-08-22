@@ -13,6 +13,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 
 " Code completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Silver searcher
 Plug 'rking/ag.vim'
@@ -83,7 +84,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 
 " Paste in Vim with indentation adjusted to destination context
-Plug 'sickill/vim-pasta'
+" Plug 'sickill/vim-pasta'
 
 " Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
@@ -177,6 +178,56 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""
+" coc plugin
+""""""""""""""""""""""""""""""
+
+" Use <c-space> to trigger completion.
+" inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-@> coc#refresh()
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Apply AutoFix to problem on the current line.
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Run the Code Lens action on the current line.
+nmap <leader>cl  <Plug>(coc-codelens-action)
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocActionAsync('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+""""""""""""""""""""""""""""""
 " vim-godot plugin
 """"""""""""""""""""""""""""""
 
@@ -184,7 +235,8 @@ call plug#end()
 func! GodotSettings() abort
     let g:godot_executable = '/Applications/Godot.app'
     " setlocal foldmethod=expr
-    setlocal tabstop=4
+    " setlocal tabstop=4
+    setlocal autoindent noexpandtab tabstop=4 shiftwidth=4
     nnoremap <buffer> <F4> :GodotRunLast<CR>
     nnoremap <buffer> <F5> :GodotRun<CR>
     nnoremap <buffer> <F6> :GodotRunCurrent<CR>
