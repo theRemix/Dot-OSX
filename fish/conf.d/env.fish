@@ -3,7 +3,7 @@ if not set -q __fish_path_set
 
   set -g -x ANDROID_HOME /Users/remix/Library/Android/sdk/
   set -g -x TERM xterm-256color
-  set -g -x EDITOR /usr/local/bin/nvim
+  set -g -x EDITOR /opt/homebrew/bin/nvim
   set -g -x GIT_EDITOR $EDITOR
   set -g -x GOPATH ~/.gopath
   set -g -x DISPLAY :0.0
@@ -20,7 +20,7 @@ if not set -q __fish_path_set
   set -g -x CPPFLAGS '-I/usr/local/opt/sqlite/include -I/usr/local/opt/readline/include -I/usr/local/opt/openssl@1.1/include -I/usr/local/opt/ncurses/include'
 
   set -g __fish_path_set 1
-  set -U fish_user_paths ~/.local/bin ~/.fzf/bin ~/.win/bin $GOPATH/bin $ANDROID_HOME/platform-tools/ ~/.nvm/versions/node/v12.19.0/bin/
+  set -U fish_user_paths ~/.local/bin ~/.fzf/bin ~/.win/bin $GOPATH/bin $ANDROID_HOME/platform-tools/ ~/.nvm/versions/node/v12.19.0/bin/ /opt/homebrew/bin
 
 end
 
