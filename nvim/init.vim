@@ -73,6 +73,9 @@ set clipboard=unnamed
 set nofoldenable
 set foldmethod=expr
 
+" use fzf
+set rtp+=/opt/homebrew/opt/fzf
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " => MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -312,10 +315,12 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " colorscheme
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
+Plug 'TroyFletcher/vim-colors-synthwave'
 
 " vim airline
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Telescope and gitsigns requires plenary to function
 Plug 'nvim-lua/plenary.nvim'
@@ -378,13 +383,20 @@ Plug 'hashivim/vim-terraform'
 call plug#end()
 
 " onedark colorscheme
-let g:airline_theme='onedark'
-let g:onedark_terminal_italics=1
-colorscheme onedark
+" colorscheme onedark
+" let g:airline_theme='onedark'
+" let g:onedark_terminal_italics=1
+"
+" synthwave colorscheme
+colorscheme synthwave
+let g:airline_theme='kolor'
 
 " gitsigns : placement of the signs
 " set signcolumn=number
 set signcolumn=yes
+
+" automatically trim trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
 
 " Telescope mappings
 nnoremap <C-p> :Telescope find_files<Cr>
