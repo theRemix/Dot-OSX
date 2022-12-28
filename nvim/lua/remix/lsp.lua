@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 for _, lsp in ipairs(servers) do
 	nvim_lsp[lsp].setup {
@@ -39,7 +39,7 @@ nvim_lsp.terraformls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   cmd = {'terraform-ls', 'serve'},
-} 
+}
 
 -- nvim-cmp
 local cmp = require('cmp')
