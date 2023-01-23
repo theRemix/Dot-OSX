@@ -56,3 +56,5 @@ alias m="./main.sh"
 alias nvm="bass source ~/.nvm/nvm.sh --no-use ';' nvm"
 
 alias aus="env TZ=:Australia/Brisbane date"
+
+alias fcd="cd (find * -type d | fzf)"

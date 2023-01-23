@@ -23,3 +23,7 @@ opt.updatetime = 50 -- shorten delay; (default is 4000 ms = 4 s) leads to notice
 -----------------------------------------------------------
 opt.smartindent = true -- autoindent new lines
 opt.autoindent = true -- copy indent from current line
+opt.expandtab = true -- Use spaces instead of tabs
+opt.smarttab = true -- Be smart when using tabs
+opt.shiftwidth = 2 -- Number of spaces to use for indent and unindent
+opt.tabstop = 2 -- Visible width of tabs
