@@ -20,10 +20,13 @@ local which_key = lvim.builtin.which_key
 -----------------------------------------------------------
 -- Options
 -----------------------------------------------------------
-which_key.setup.plugins.marks = true     -- shows a list of your marks on ' and `
+which_key.setup.plugins.marks = true -- shows a list of your marks on ' and `
 which_key.setup.plugins.registers = true -- shows your registers on " in NORMAL or <C-r> in INSERT mode
 -- disable so we can use telescope
 -- which_key.setup.plugins.spelling.enabled = false
+
+-- enable `z` for folding
+lvim.builtin.which_key.setup.plugins.presets.z = true
 
 -----------------------------------------------------------
 -- Which Key Globals
@@ -38,7 +41,7 @@ which_key.mappings["w"] = { "<cmd>w!<cr>", "Save  " }
 
 -- initial parent for mappings in ../languages/*
 which_key.mappings[which_key.language_prefix] = {
-  name = "Languages  "
+	name = "Languages  ",
 }
 
 -- Easymotion is mapping h j k and l

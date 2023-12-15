@@ -17,7 +17,7 @@
     - do lunarvim post install
     - launch lunarvim and install plugins
 
-## Walkthrough & Config Tour
+## CheatSheet
 
 ### Tmux
 
@@ -85,7 +85,7 @@ Vanilla Vim (Vimnilla?)
   - `:w` saving file
   - `:w <path>` saving file to <path>
   - `:wq` saving and quit
-  - `:q` quit and discard any changes
+  - `:q!` quit and discard any changes
   - `:e <path>` open file by entering <path>
   - `:e` reload current file
   - `:e!` reload current file discarding any changes
@@ -111,6 +111,8 @@ Vanilla Vim (Vimnilla?)
   - `e` go to end of word or next word
   - `b` go to beginning of word or previous word
   - `w` go to beginning of next word
+  - `m<letter>` create mark at <letter>
+  - `'<letter>` jump to mark at <letter>
 - [count]
   - `[count]<whatever action>` do something [count] times
 - undo
@@ -182,5 +184,7 @@ Vanilla Vim (Vimnilla?)
   - `M-j` `M-k` alt+j or alt+k moves text up and down
 - vim-surround
   - `S-s <character>` with selection, wrap with <character>
-- tour config structure
-- copilot
+- folding
+  - `zc` close a fold
+  - `zo` open a fold
+  - can be done with a selection or just under cursor

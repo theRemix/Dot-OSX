@@ -41,13 +41,13 @@ local sources = {
 	"plugins/lspkind",
 	"plugins/null-ls",
 	"plugins/symbols-outline",
+	"plugins/telescope",
 	"plugins/treesitter",
 	"plugins/undotree",
 
 	-- [[ Optional ]] --
 	"plugins/copilot",
-	"plugins/telescope",
-	"plugins/terminal",
+	-- "plugins/terminal",
 	"plugins/spectre",
 
 	-- [[ Language Specific ]] --
