@@ -5,11 +5,11 @@ Dotfiles for OSX
 
 ## Provides Configurations For
 
-- git
 - alacritty
 - fish
-- nvim
+- lunarvim
 - tmux
+- git
 
 ## Install
 
@@ -17,20 +17,20 @@ Dotfiles for OSX
 git clone git@github.com:theRemix/Dot-OSX.git ~/.dotfiles
 ```
 
-## Links
+## Setup Links
 
 ```sh
-ln -s ~/.dotfiles/nvim  ~/.config/nvim
+ln -s ~/.dotfiles/lvim  ~/.config/lvim
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/fish ~/.config/fish
 ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 ```
-### nvim plug
 
-install Plug to
-```
-~/.local/share/nvim/site/autoload/plug.vim
-```
+## LunarVim
+
+[Install Lunarvim](https://www.lunarvim.org/docs/installation)
+
+Follow the [PostInstall guide](https://www.lunarvim.org/docs/installation/post-install.
 
 ## Git
 
@@ -44,14 +44,24 @@ cat ~/.dotfiles/gitconfig-tail >> ~/.gitconfig
 
 after linking and configuring, install dependencies
 
+### Tmux
+```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+### Fish
+```sh
+mkdir ~/.config/fisherman
+fisher
+```
+
+### Git
 ```sh
 brew install git-delta fzf
 mkdir ~/.config/fisherman
 fisher
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
-
-add the Nerd Font patched version of OperatorMono
 
 ## Change default shell ><>
 
@@ -68,10 +78,3 @@ tmux source ~/.tmux.conf
 
 `prefix` + `I`
 
-## Install vim plugins
-
-in vim
-
-```sh
-:PlugInstall
-```
