@@ -26,47 +26,45 @@ Resources
 
 --]]
 
-
-
 local sources = {
-  "core/plugins",
-  "core/options",
-  "core/keymaps",
+	"core/plugins",
+	"core/options",
+	"core/keymaps",
 
-  -- [[ Recommended ]] --
-  "plugins/which_key", -- load first for initial remappings
-  "plugins/alpha",
-  "plugins/easymotion",
-  "plugins/hlargs",
-  "plugins/indentlines",
-  "plugins/lualine",
-  "plugins/lspkind",
-  "plugins/null-ls",
-  "plugins/symbols-outline",
-  "plugins/treesitter",
-  "plugins/undotree",
+	-- [[ Recommended ]] --
+	"plugins/which_key", -- load first for initial remappings
+	"plugins/alpha",
+	"plugins/easymotion",
+	"plugins/hlargs",
+	"plugins/indentlines",
+	"plugins/lualine",
+	"plugins/lspkind",
+	"plugins/null-ls",
+	"plugins/symbols-outline",
+	"plugins/treesitter",
+	"plugins/undotree",
 
-  -- [[ Optional ]] --
-  "plugins/copilot",
-  "plugins/telescope",
-  "plugins/terminal",
-  "plugins/spectre",
+	-- [[ Optional ]] --
+	"plugins/copilot",
+	"plugins/telescope",
+	"plugins/terminal",
+	"plugins/spectre",
 
-  -- [[ Language Specific ]] --
-  "languages/bash",
-  "languages/go",
-  "languages/javascript",
-  -- "languages/javascriptreact",
-  "languages/python",
-  -- "languages/rust",
-  "languages/terraform",
-  -- "languages/typescript",
-  -- "languages/typescriptreact",
+	-- [[ Language Specific ]] --
+	"languages/bash",
+	"languages/go",
+	"languages/javascript",
+	-- "languages/javascriptreact",
+	"languages/python",
+	-- "languages/rust",
+	"languages/terraform",
+	"languages/typescript",
+	-- "languages/typescriptreact",
 }
 
 for _, source in ipairs(sources) do
-  local status_ok, fault = pcall(require, source)
-  if not status_ok then
-    error("Failed to load source " .. source .. "---- ----" .. fault)
-  end
+	local status_ok, fault = pcall(require, source)
+	if not status_ok then
+		error("Failed to load source " .. source .. "---- ----" .. fault)
+	end
 end

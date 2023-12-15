@@ -31,7 +31,7 @@ ln -s ~/.dotfiles/alacritty ~/.config/alacritty
 
 [Install Lunarvim](https://www.lunarvim.org/docs/installation)
 
-Follow the [PostInstall guide](https://www.lunarvim.org/docs/installation/post-install.
+Follow the [PostInstall guide](https://www.lunarvim.org/docs/installation/post-install)
 
 ## Git
 
@@ -46,17 +46,20 @@ cat ~/.dotfiles/gitconfig-tail >> ~/.gitconfig
 after linking and configuring, install dependencies
 
 ### Tmux
+
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
 ### Fish
+
 ```sh
 mkdir ~/.config/fisherman
 fisher
 ```
 
 ### Git
+
 ```sh
 brew install git-delta fzf
 mkdir ~/.config/fisherman
@@ -78,4 +81,3 @@ tmux source ~/.tmux.conf
 ```
 
 `prefix` + `I`
-
