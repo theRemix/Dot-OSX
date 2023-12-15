@@ -176,5 +176,8 @@ Vanilla Vim (Vimnilla?)
 - search and Telescope 
   - `<Leader>st` search for text
   - `<Leader>s` see WhichKey `Search+` for more
+- custom key maps
+  - `jk` from insert mode, enters Escape key
+  - `M-j` `M-k` alt+j or alt+k moves text up and down
 - tour config structure
 - copilot
