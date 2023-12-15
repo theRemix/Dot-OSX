@@ -156,6 +156,7 @@ Vanilla Vim (Vimnilla?)
   - `:split` create horizontal split
   - `<Leader>q` close current pane
 - fs and Telescope
+  - `<Leader>w` Save (write file)
   - `<Leader>e` toggle file Explorer
   - `<Leader>f` quick search for files
   - `<Leader>sf` search for files with preview
@@ -179,5 +180,7 @@ Vanilla Vim (Vimnilla?)
 - custom key maps
   - `jk` from insert mode, enters Escape key
   - `M-j` `M-k` alt+j or alt+k moves text up and down
+- vim-surround
+  - `S-s <character>` with selection, wrap with <character>
 - tour config structure
 - copilot
