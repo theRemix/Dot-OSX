@@ -44,7 +44,10 @@
 - attaching 
     - shared and remote
 - managing sessions
+- saving sessions
+    - `<prefix>s`
 - restoring sessions
+    - `<prefix>r`
 - yank (copy and paste)
 - configuration file
 
