@@ -2,6 +2,7 @@
 
 Dotfiles for OSX
 
+See [Intro to Vim & Tmux](./INTRO.md)
 
 ## Provides Configurations For
 
