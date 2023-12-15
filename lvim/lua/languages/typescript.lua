@@ -8,6 +8,7 @@ table.insert(lvim.plugins, { "jose-elias-alvarez/typescript.nvim" }) -- plugin t
 -----------------------------------------------------------
 local which_key = lvim.builtin.which_key
 
+local lang_key = "t"
 local mappings = {
   name = "TypeScript  ",
 
@@ -19,4 +20,4 @@ local mappings = {
   g = { "<cmd>TypescriptGoToSourceDefinition<Cr>", "GoToSourceDefinition" },
 }
 
-which_key["m"]["t"] = mappings
+which_key.mappings[which_key.language_prefix][lang_key] = mappings

@@ -8,6 +8,7 @@ table.insert(lvim.plugins, { "simrat39/rust-tools.nvim" }) -- tools for better d
 -----------------------------------------------------------
 local which_key = lvim.builtin.which_key
 
+local lang_key = "r"
 local mappings = {
   name = "Rust  ",
 
@@ -47,4 +48,4 @@ local mappings = {
   },
 }
 
-which_key["m"]["r"] = mappings
+which_key.mappings[which_key.language_prefix][lang_key] = mappings

@@ -55,7 +55,7 @@ operator_mode["/"] = "<Plug>(easymotion-tn)"
 -- maps <leader>(direction) keys
 -- LunarVim default "h" for no highlight needs to be remapped
 -- LunarVim default "l" for +LSP needs to be remapped
-which_key.mappings["h"] = { "<Plug>(easymotion-linebackward)", "EasyMotion ←" }
-which_key.mappings["j"] = { "<Plug>(easymotion-j)", "EasyMotion ↑" }
-which_key.mappings["k"] = { "<Plug>(easymotion-k)", "EasyMotion ↓" }
-which_key.mappings["l"] = { "<Plug>(easymotion-lineforward)", "EasyMotion →" }
+which_key.mappings["h"] = { "<Plug>(easymotion-linebackward)", "which_key_ignore" } -- EasyMotion ←
+which_key.mappings["j"] = { "<Plug>(easymotion-j)", "which_key_ignore" }            -- EasyMotion ↑
+which_key.mappings["k"] = { "<Plug>(easymotion-k)", "which_key_ignore" }            -- EasyMotion ↓
+which_key.mappings["l"] = { "<Plug>(easymotion-lineforward)", "which_key_ignore" }  -- EasyMotion →

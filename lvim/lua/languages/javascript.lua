@@ -8,6 +8,7 @@ table.insert(lvim.plugins, { "mxsdev/nvim-dap-vscode-js" }) -- nvim-dap adapter 
 -----------------------------------------------------------
 local which_key = lvim.builtin.which_key
 
+local lang_key = "j"
 local mappings = {
   name = "JavaScript  ",
   i = { "<cmd>TypescriptAddMissingImports<Cr>", "AddMissingImports" },
@@ -17,4 +18,5 @@ local mappings = {
   f = { "<cmd>TypescriptFixAll<Cr>", "FixAll" },
   g = { "<cmd>TypescriptGoToSourceDefinition<Cr>", "GoToSourceDefinition" },
 }
-which_key["m"]["j"] = mappings
+
+which_key.mappings[which_key.language_prefix][lang_key] = mappings
