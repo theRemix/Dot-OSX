@@ -1,19 +1,18 @@
 --[[
- .          __         __                  __                       ___ __
- .--------.|__|.-----.|__|.--------.---.-.|  |   .----.-----.-----.'  _|__|.-----.
- |        ||  ||     ||  ||        |  _  ||  |   |  __|  _  |     |   _|  ||  _  |
- |__|__|__||__||__|__||__||__|__|__|___._||__|   |____|_____|__|__|__| |__||___  |
- .                                                                         |_____|
+.      _   _     _       _
+ _ _ _| |_|_|___| |_ ___| |_ ___ _ _
+| | | |   | |  _|   |___| '_| -_| | |
+|_____|_|_|_|___|_|_|   |_,_|___|_  |
+.                               |___|
 
 
-After making any change, run
-:source ~/.config/lvim/config.lua # or path to where this file is
-:LvimReload
+Displays a popup with possible key bindings of the command you started typing.
 
-TODO
+Trigger with <Leader>
 
-- qq to close all and quit
-- q to close current buffer
+:help which-key
+
+view all keymappings with <leader>vk
 
 --]]
 local which_key = lvim.builtin.which_key
