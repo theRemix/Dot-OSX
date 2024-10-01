@@ -3,7 +3,7 @@ if not set -q __fish_path_set
 
   set -g -x ANDROID_HOME ~/Library/Android/sdk/
   set -g -x TERM xterm-256color
-  set -g -x EDITOR /opt/homebrew/bin/nvim
+  set -g -x EDITOR /Users/jonborgonia/.local/bin/lvim
   set -g -x GIT_EDITOR $EDITOR
   set -g -x GOPATH ~/.gopath
   set -g -x DISPLAY :0.0
@@ -14,6 +14,8 @@ if not set -q __fish_path_set
   set -g -x LANG en_US.UTF-8
   set -g -x LANGUAGE en_US.UTF-8
   set -g -x DOCKER_BUILDKIT 1
+
+  set -g -x NODE_OPTIONS --no-experimental-fetch # for dap jsnode
 
   set -g -x LDFLAGS '-L/opt/homebrew/lib/ -L/opt/homebrew/opt/sqlite/lib/ -L/opt/homebrew/opt/readline/lib/ -L/opt/homebrew/opt/openssl@1.1/lib/ -L/opt/homebrew/opt/ncurses/lib/'
   set -g -x CPPFLAGS '-I/opt/homebrew/include/ -I/opt/homebrew/opt/sqlite/include/ -I/opt/homebrew/opt/readline/include/ -I/opt/homebrew/opt/openssl@1.1/include/ -I/opt/homebrew/opt/ncurses/include/'

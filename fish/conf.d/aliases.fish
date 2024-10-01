@@ -11,6 +11,27 @@ alias ll='ls -lah'
 # alias l='-lhFG'
 # alias la='-lahFG'
 
+# sapling
+alias s='sl'
+alias sts='sl st'
+alias sd='sl diff'
+alias sg='sl goto'
+# alias sgp='sl goto && sl pull'
+function sgp --wraps sl --description 'alias sgp=sl pull && sl goto "$@"'
+  sl pull && sl goto "$argv"
+end
+alias sgm='sl goto main'
+alias sgmp='sl pull && sl goto main'
+alias sgmm='sl goto master'
+alias sgmmp='sl pull && sl goto master'
+alias sp='sl pull'
+alias sr='sl pull && sl rebase -d'
+alias srm='sl pull && sl rebase -d remote/main'
+alias srmm='sl pull && sl rebase -d remote/master'
+alias slap='sl amend && sl pr s'
+alias slep='sl amend -e && sl pr s'
+alias sprs='sl pr s'
+
 alias t='task'
 alias ta='task add'
 #alias td='task done' # task 123 done # in /usr/local/bin/td
